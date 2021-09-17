@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EjercicioPropuesto.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang ="es">
+    <script languaje="C#" runat="server">
+    </script>
+    <head runat="server">
+        <title><%: Page.Title %>- ELECTRODOMESTICOS</title>
+    </head>
+    <body id ="cuerpo" runat="server">
+         <p></p>
+        <form id="WebForm" method="post" runat="server">
+            <div>
+                <h1>Datos de Electrodomesticos</h1>
+                &nbsp;<asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                    <asp:ListItem Value="0">Microondas</asp:ListItem>
+                    <asp:ListItem Value="1">Refrigeradora</asp:ListItem>
+                    <asp:ListItem Value="2">Cafetera</asp:ListItem>
+                    <asp:ListItem Value="3">Televisor</asp:ListItem>
+                </asp:RadioButtonList>
+                <br />
+                <br />
+&nbsp;<asp:MultiView ID="MultiView1" runat="server" OnActiveViewChanged="MultiView1_ActiveViewChanged">
+                    <asp:View ID="View1" runat="server">
+                        Codigo: 00123241<br /> Nombre: Microondas<br /> Descripcion: Horno Microondas de 300W<br /> Marca: Oster<br /> Precio:60$
+                        <br />
+                        <input type="submit" id="Submit1" runat="server" value="Mostrar Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+                        <br />
+                    <img id="Img1" runat="server"  alt="Cinque Terre" width="304" height="236"/>
+                    </asp:View>
+                    <asp:View ID="View2" runat="server">
+                        Codigo: 120032<br /> Nombre: Refrigeradora<br /> Descripcion: Refrigeradora con congelador de 10 lt<br /> Marca: Samsung<br /> Precio:150$<br />
+                    <input type="submit" id="Submit2" runat="server" value="Mostrar Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+                        <br />
+                    <img id="Img2" runat="server"  alt="Cinque Terre" width="304" height="236"/>
+                    </asp:View>
+                    <asp:View ID="View3" runat="server">
+                        Codigo: 33214124<br /> Nombre: Cafetera<br /> Descripcion: Cafetera Instantanea de 800 ml<br /> Marca: Echo<br /> Precio:80$
+                        <br />
+                   <input type="submit" id="Submit3" runat="server" value="Mostrar Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+                        <br />
+                        <img id="Img3" runat="server"  alt="Cinque Terre" width="304" height="236"/> 
+                        </asp:View>
+                   
+                    <asp:View ID="View4" runat="server">
+                        Codigo: 123985<br /> Nombre: Televisor<br /> Descripcion: Televisor marca AOC de 32&quot;<br /> Marca: AOC<br /> Precio:100$
+                        <br />
+                   <input type="submit" id="Submit4" runat="server" value="Mostrar Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+                        <br />
+                        <img id="Img4" runat="server" alt="Cinque Terre" width="304" height="236"/>
+                        </asp:View>
+                </asp:MultiView>
+                <br/><br/>
+            </div>
+        </form>
+    </body>
+</html>
+
